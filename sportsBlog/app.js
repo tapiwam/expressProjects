@@ -14,7 +14,9 @@ mongoose.connect('mongodb://localhost/sportsblog');
 var db = mongoose.connection;
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var articles = require('./routes/articles');
+var categories = require('./routes/categories');
+var manage = require('./routes/manage');
 
 var app = express();
 
@@ -61,7 +63,9 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/articles', articles);
+app.use('/categories', categories);
+app.use('/manage', manage);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
