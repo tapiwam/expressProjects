@@ -6,20 +6,22 @@ block content
   .container
     .row
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-        a(class='btn btn-tiny btn-primary' href='/manage/categories/add') Create Category
+
 
         h1= title
-          small
-            a(href='/manage/articles') Manage Articles
+        small
+          a(class='btn btn-primary' href='/manage/categories/add') Create Category
+          a(class='btn btn-default' href='/manage/articles') Manage Articles
+        hr
 
-        // != messages()
+        != messages()
 
         table(class='table table-striped')
           tr
             th Category Title
             th
-          // each article, i in categories
-          tr
-            td TITLE
-            td
-              a(class="btn brn-tiny btn-default" href="/manage/categories/edit/1") Edit
+          each category, i in categories
+            tr
+              td #{category.title}
+              td
+                a(class="btn btn-tiny btn-default" href="/manage/categories/edit/#{category._id}") Edit

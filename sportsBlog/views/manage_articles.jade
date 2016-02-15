@@ -6,11 +6,15 @@ block content
   .container
     .row
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-        a(class='btn btn-tiny btn-primary' href='/manage/articles/add') Create Article
+        // a(class='btn btn-tiny btn-primary' href='/manage/articles/add') Create Article
 
         h1= title
-          small
-            a(href='/manage/categories') Manage Categories
+        small
+          a(class='btn btn-tiny btn-primary' href='/manage/articles/add') Create Article
+          a(class='btn btn-tiny btn-default' href='/manage/categories') Manage Categories
+
+        hr
+
         table(class='table table-striped')
           tr
             th Article Title
